@@ -20,3 +20,8 @@ document.write(doubleSize);
 let doubleSize = size * 2; */
 let minSize = (doubleSize * 2) - (size / 2);
 document.write(minSize);
+
+
+/* Task 1.1 */
+ let favoriteFood = 'Crisps';
+ document.write(favoriteFood);
