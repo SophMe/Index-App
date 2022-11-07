@@ -1,17 +1,22 @@
-:root {
-  --BGCOLOR: #fffcfc;
-  --TEXT:  #484349;
-}
+/*
+color palette: 
+#22223B ebony clay, very dark blue
+#4A4E69 mulled wine, dark blue
+#9A8C98 venus, grey pink
+#C9ADA7 clam shell, soft grey pink
+#fffcfc rose white
+*/
 
-* {box-sizing: border-box;}
+body {
+	background-color: #fffcfc;
+}
 
 body {/*simple selector*/
 	font-family: 'Raleway', sans-serif;
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 1.6;
-	background-color: var(--BGCOLOR);
-  color: var(--TEXT);
+	background-color: #fffcfc;
 	margin: 20px;
 }
 
@@ -29,3 +34,59 @@ h3 {
   font-size: 18px;
   font-weight: 700;
 }
+
+a:link{ /*pseudo class*/
+  color:#4a4e69;
+  text-decoration: none;
+}
+
+a:visited{
+  color:#4a4e69;
+}
+
+a:hover, a:focus {
+  color:#9a8c98;
+  text-decoration: none;
+}
+
+a:active{
+  color:#4a4e69;
+}
+
+.page-footer {
+	clear: both; /*clear all floats, both left and right*/
+}
+
+/* keep this at the bottom of the file */
+@media all and (max-width: 500px) {
+  .project-list {
+    grid-template-columns: 1fr;
+  }
+
+@media all and (min-width: 500px) and (max-width: 750px){
+  .project-list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+@media all and (max-width: 750px){
+  /* shared code */
+  .project-list{
+    grid-gap: 10px;
+  }
+  .project-list__item:last-child {
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+  }
+  h1 {
+    font-size: 22px;
+  }
+}
+/* keep this at the bottom of the file */
+
+
+
+
+
+
+
+
