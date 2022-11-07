@@ -10,7 +10,7 @@ let pokemonList = [
   
   {name: "Pikachu", 
   height: 0.4, 
-  types:['electric', 'none']
+  types:'electric'
   hitpoints: 35},
   
   {name: "Charizad", 
