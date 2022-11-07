@@ -1,27 +1,25 @@
-alert('Hello world') // Everything after the slashes is ignored
-
-let myName = 'Bob';
-document.write(myName); /* The document represents the DOM, the JavaScript object made from my HTML code */
-myName = 'John Doe';
-document.write(myName);
-
-/* Mathematical Expressions Example 1 */
-let simpleAddition = 2 + 2;
-document.write(simpleAddition);
-
-/* Example 2 */
-let size = 100;
-let doubleSize = size * 2;
-document.write(doubleSize);
-
-/* Example 3 */
-// When I write this twice it does not work, why??
-/* let size = 100;
-let doubleSize = size * 2; */
-let minSize = (doubleSize * 2) - (size / 2);
-document.write(minSize);
-
-
-/* Task 1.1 */
- let favoriteFood = 'Crisps';
- document.write(favoriteFood);
+//name is a string
+//height is a number
+//types is an array of strings
+//hitpoints is a number
+let pokemonList = [
+  {name: "Bulbasaur", 
+  height: 7, 
+  types:['grass', 'poison']
+  hitpoints: 45},
+  
+  {name: "Pikachu", 
+  height: 0.4, 
+  types:['electric', 'none']
+  hitpoints: 35},
+  
+  {name: "Charizad", 
+  height: 1.7, 
+  types:['fire', 'flying']
+  hitpoints: 78},
+ 
+ {name: "Beedrill", 
+  height: 1, 
+  types:['bug', 'poison']
+  hitpoints: 65}
+  ]
