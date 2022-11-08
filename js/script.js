@@ -22,4 +22,4 @@ let pokemonList = [
   height: 1, 
   types:['bug', 'poison']
   hitpoints: 65}
-  ]
+  ];
