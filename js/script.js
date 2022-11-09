@@ -5,21 +5,26 @@
 let pokemonList = [
   {name: "Bulbasaur", 
   height: 7, 
-  types:['grass', 'poison']
+  types:['grass', 'poison'],
   hitpoints: 45},
   
   {name: "Pikachu", 
   height: 0.4, 
-  types:'electric'
+  types:'electric',
   hitpoints: 35},
   
   {name: "Charizad", 
   height: 1.7, 
-  types:['fire', 'flying']
+  types:['fire', 'flying'],
   hitpoints: 78},
  
  {name: "Beedrill", 
   height: 1, 
-  types:['bug', 'poison']
+  types:['bug', 'poison'],
   hitpoints: 65}
   ];
+
+//Loop(iterator i starts with index 0; as long as i is less than number of objects; add 1 to i) -> write property name
+ for(let i = 0; i < pokemonList.length; i++) {
+    document.write(pokemonList[i].name)
+    }
