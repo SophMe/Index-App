@@ -1,6 +1,7 @@
 :root {
-  --BGCOLOR: #fffcfc;
-  --TEXT:  #484349;
+  --BGCOLOR: #f4f3ee;
+  --ALTBGCOLOR: #e0dfd5;
+  --TEXT: #313638;
 }
 
 * {box-sizing: border-box;}
@@ -12,7 +13,13 @@ body {/*simple selector*/
 	line-height: 1.6;
 	background-color: var(--BGCOLOR);
   color: var(--TEXT);
-	margin: 20px;
+	margin: 30px;
+}
+
+p {
+	background: var(--ALTBGCOLOR);
+	padding: 15px;
+	max-width: 400px;
 }
 
 h1 {
