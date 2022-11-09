@@ -26,5 +26,5 @@ let pokemonList = [
 
 //Loop(iterator i starts with index 0; as long as i is less than number of objects; add 1 to i) -> write property name
  for(let i = 0; i < pokemonList.length; i++) {
-    document.write(pokemonList[i].name)
+    document.write('<p>' + pokemonList[i].name + '</p>')
     }
