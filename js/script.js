@@ -1,6 +1,6 @@
 //forEach and IIFE
-//next line is IIFE function, with and array (pokemonList) in the curly brackets 
-//let pokemonRepository = (function () {
+//next line is IIFE function, with an array (pokemonList) in the curly brackets 
+let pokemonRepository = (function () {
 
 //name is a string
 //height is a number
@@ -30,7 +30,7 @@
 
 //"The IIFE returns an object with two keys: add and getAll. This means that, whenever you access pokemonRepository somewhere in your app, it will represent an object with these two keys."??
 //Two seperate functions
-/*  function getAll () {
+  function getAll () {
     return pokemonList;
   }
 
@@ -38,6 +38,7 @@
     pokemonList.push(pokemon);
   }
 
+//information that is returned is accessible from outside the IIFE
   return {
     add: add,
     getAll: getAll
@@ -45,7 +46,7 @@
 
 //Closing brackets of IIFE
 }
-  ) ();*/
+  ) ();
 
 //Loop(iterator i starts with index 0; as long as i is less than number of objects; add 1 to i) -> write property "name"
 //  for(let i = 0; i < pokemonList.length; i++){
@@ -63,12 +64,13 @@
 //  } 
 
 //forEach
-//my array.forEach(function(property){action(property)}); ??!
-pokemonList.forEach(function(name){
-  document.write('<p>' + pokemonList.name + '</p>');
+//The function(item) is passed as a parameter to the forEach()function
+//my array.forEach(function(property){action(key.property)}); 
+pokemonList.forEach(function(pokemon) {
+  document.write(pokemon.name);
 });
 
-
+console.log(pokemonRepository.getAll());
 
 
 
