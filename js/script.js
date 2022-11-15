@@ -28,7 +28,8 @@ let pokemonRepository = (function () {
     hitpoints: 65}
     ];
 
-//"The IIFE returns an object with two keys: add and getAll. This means that, whenever you access pokemonRepository somewhere in your app, it will represent an object with these two keys."??
+//"The IIFE returns an object with two keys: add and getAll. 
+//This means that, whenever you access pokemonRepository somewhere in your app, it will represent an object with these two keys."
 //Two seperate functions
   function getAll () {
     return pokemonList;
@@ -66,12 +67,12 @@ let pokemonRepository = (function () {
 //forEach
 //The function(item) is passed as a parameter to the forEach()function
 //my array.forEach(function(property){action(key.property)}); 
-pokemonList.forEach(function(pokemon) {
+/*pokemonList.forEach(function(pokemon) {
   document.write(pokemon.name);
 });
-
+*/
 console.log(pokemonRepository.getAll());
-
+document.write(pokemonRepository.getAll());
 
 
 
