@@ -35,9 +35,15 @@ let pokemonRepository = (function () {
     return pokemonList;
   }
 
-  function add (pokemon) {
-    pokemonList.push(pokemon);
-  }
+//  function add (pokemon) {
+//    pokemonList.push(pokemon);
+//  }
+
+//typeof object as condition to add
+  function add(pokemon) {
+    if (typeof pokemon === "object"){
+      pokemonList.push(pokemon);
+  } else (console.log("There is something wrong with this Pokémon."));  
 
 //information that is returned is accessible from outside the IIFE
   return {
