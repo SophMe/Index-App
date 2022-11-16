@@ -66,6 +66,10 @@ pokemonRepository.getAll().forEach(function(pokemon) {
   console.log("pokemon:", pokemon.name)
 });
 
+pokemonRepository.getAll().forEach(function(pokemon) {
+  document.write("pokemon:", pokemon.name)
+});
+
 //console.log(pokemonRepository.getAll());
 //document.write(pokemonRepository.getAll());
 
