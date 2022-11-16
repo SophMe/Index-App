@@ -50,9 +50,7 @@ let pokemonRepository = (function () {
   ) ();
 
 //forEach
-//console.log(pokemonRepository.getAll());
-//document.write(pokemonRepository.getAll());
-//The function(pokemon) is passed as a parameter to the forEach()function
+//The function(pokemon) is passed as a parameter to the forEach() function:
 //my array.forEach(function(property){action(key.property)}); 
 //pokemonList.forEach(function(pokemon) {
 //  document.write(pokemon.name);
@@ -62,7 +60,8 @@ pokemonRepository.getAll().forEach(function(pokemon) {
   console.log("pokemon:", pokemon.name)
 });
 
-
+//console.log(pokemonRepository.getAll());
+//document.write(pokemonRepository.getAll());
 
 
 
