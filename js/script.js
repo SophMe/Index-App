@@ -51,13 +51,23 @@ function addListItem(pokemon) {
   button.classList.add('listButton');
   listItem.appendChild(button);
   unorderedList.appendChild(listItem);
-};
+//event listener  
+  button.addEventListener('click', function(event){
+    showDetails(pokemon)
+  });
+}
+
+function showDetails(pokemon) {
+  //does not work with pokemon.name :(
+  console.log(pokemon) 
+}
 
 //information that is returned is accessible from outside the IIFE
   return {
     add: add,
     getAll: getAll,
-    addListItem: addListItem
+    addListItem: addListItem,
+    showDetails: showDetails
   };
 
 //Closing brackets of IIFE
