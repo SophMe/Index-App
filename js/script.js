@@ -39,24 +39,10 @@ let pokemonRepository = (function () {
 function add(pokemon) {
     if (typeof pokemon === "object"){
       pokemonList.push(pokemon);
-  } else (console.log("There is something wrong with this Pokémon."));
+  } else {console.log("There is something wrong with this Pokémon.")};
 }  
 
-//information that is returned is accessible from outside the IIFE
-  return {
-    add: add,
-    getAll: getAll
-  };
-
-function addListItem(pokemon);
-//Closing brackets of IIFE
-}
-  ) ();
-
-//forEach
-//The function(pokemon) is passed as a parameter to the forEach() function:
-//my array.forEach(function(property){action(key.property)});
-pokemonRepository.getAll().forEach(function(pokemon) {
+function addListItem(pokemon) {
   //DOM manipulation
   let unorderedList = document.querySelector('ul');
   let listItem = document.createElement('li');
@@ -65,6 +51,33 @@ pokemonRepository.getAll().forEach(function(pokemon) {
   button.classList.add('listButton');
   listItem.appendChild(button);
   unorderedList.appendChild(listItem);
-  //  console.log(unorderedList);
+//event listener  
+  button.addEventListener('click', function(event){
+    showDetails(pokemon)
+  });
+}
+
+function showDetails(pokemon) {
+  //does not work with pokemon.name :(
+  console.log(pokemon) 
+}
+
+//information that is returned is accessible from outside the IIFE
+  return {
+    add: add,
+    getAll: getAll,
+    addListItem: addListItem,
+    showDetails: showDetails
+  };
+
+//Closing brackets of IIFE
+}
+  ) ();
+
+//forEach
+//The function(pokemon) is passed as a parameter to the forEach() function:
+//my array.forEach(function(property){action(key.property)});
+pokemonRepository.getAll().forEach(function(pokemon) {
+  pokemonRepository.addListItem(pokemon);
 });
 

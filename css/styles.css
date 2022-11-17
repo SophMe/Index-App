@@ -7,28 +7,32 @@
 
 * {box-sizing: border-box;}
 
-body {/*simple selector*/
+body {
 	font-family: 'Raleway', sans-serif;
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 1.6;
 	background-color: var(--BGCOLOR);
   color: var(--TEXT);
-	margin: 30px;
+	margin: 15px;
 }
 
+/*How can I align p within div?*/
 p {
 	background: var(--ALTBGCOLOR);
-	padding: 15px;
-	max-width: 700px;
+	padding: 5px;
+	margin: 15px;
+	width: 90%;
 	border-radius: 4px;
 }
 
 h1 {
 	font-size: 30px;
 	font-weight: 700;
+	padding: 15px;
 }
 
+/*
 h2 {
   font-size: 24px;
   font-weight: 700;
@@ -38,22 +42,29 @@ h3 {
   font-size: 18px;
   font-weight: 700;
 }
+*/
 
-ul {
-	text-decoration: none;
-}
+ul { list-style-type: none; }
 
-li {
-	text-decoration: none;
+.main-div {
+	min-width: 400px;
+	border: 2px solid var(--ACCENT);
 }
 
 .listButton {
-  border: 1px solid var(--ACCENT);
+	background-color: var(--ALTBGCOLOR);
+  border: 2px solid var(--ACCENT);
   color: var(--TEXT);
-  background-color: var(--ALTBGCOLOR);
-  font-size: 20px;
+  font-size: 18px;
+  text-align: center;
   text-decoration: none;
   margin: 5px;
   padding: 5px;
   border-radius: 4px;
 }
+
+.listButton:hover, .listButton:focus {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
