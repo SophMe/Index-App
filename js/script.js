@@ -35,15 +35,15 @@ let pokemonRepository = (function () {
     return pokemonList;
   }
 
-//  function add (pokemon) {
-//    pokemonList.push(pokemon);
-//  }
+  function add (pokemon) {
+    pokemonList.push(pokemon);
+  }
 
 //typeof object as condition to add
-  function add(pokemon) {
-    if (typeof pokemon === "object"){
-      pokemonList.push(pokemon);
-  } else (console.log("There is something wrong with this Pokémon."));  
+//  function add(pokemon) {
+//    if (typeof pokemon === "object"){
+//      pokemonList.push(pokemon);
+//  } else (console.log("There is something wrong with this Pokémon."));  
 
 //information that is returned is accessible from outside the IIFE
   return {
@@ -62,13 +62,25 @@ let pokemonRepository = (function () {
 //  document.write(pokemon.name);
 //});
 
+//DOM manipulation
 pokemonRepository.getAll().forEach(function(pokemon) {
-  console.log("pokemon:", pokemon.name)
+  let unorderedList = document.querySelector('ul');
+  let listItem = document.createElement('li');
+  let button = document.createElement('button');
+  button.innerText = pokemon.name;
+  button.classList.add('listButton');
+  listItem.appendChild(button);
+  unorderedList.appendChild(listItem);
+  //  console.log(unorderedList);
 });
 
-pokemonRepository.getAll().forEach(function(pokemon) {
-  document.write("pokemon:", pokemon.name)
-});
+// pokemonRepository.getAll().forEach(function(pokemon) {
+//   console.log("pokemon:", pokemon.name)
+// });
+
+// pokemonRepository.getAll().forEach(function(pokemon) {
+//   document.write("pokemon:", pokemon.name)
+// });
 
 //console.log(pokemonRepository.getAll());
 //document.write(pokemonRepository.getAll());
