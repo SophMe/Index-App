@@ -1,6 +1,6 @@
 :root {
   --BGCOLOR: #f4f3ee;
-  --ALTBGCOLOR: #e0dfd5;
+  --ALTBGCOLOR: #dde5b6;
   --TEXT: #313638;
 }
 
@@ -19,7 +19,7 @@ body {/*simple selector*/
 p {
 	background: var(--ALTBGCOLOR);
 	padding: 15px;
-	max-width: 400px;
+	max-width: 700px;
 }
 
 h1 {
@@ -35,4 +35,23 @@ h2 {
 h3 {
   font-size: 18px;
   font-weight: 700;
+}
+
+ul {
+	text-decoration: none;
+}
+
+li {
+	text-decoration: none;
+}
+
+.listButton {
+  border: 1px solid #adc178;
+  color: var(--TEXT);
+  background-color: var(--ALTBGCOLOR);
+  font-size: 20px;
+  text-decoration: none;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 3px;
 }
