@@ -69,10 +69,9 @@ let pokemonRepository = (function () {
 //my array.forEach(function(property){action(key.property)}); 
 pokemonRepository.getAll().forEach(pokemon => {console.log("pokemon: ", pokemon.name)});
 
-pokemonRepository.getAll().forEach(pokemon => {document.write('<br>Name:', pokemon.name)});
+pokemonRepository.getAll().forEach(function(pokemon) {
+  document.write("pokemon:", pokemon.name)
+});
 
 //console.log(pokemonRepository.getAll());
 //document.write(pokemonRepository.getAll());
-
-
-
