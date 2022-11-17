@@ -48,6 +48,7 @@ function add(pokemon) {
     getAll: getAll
   };
 
+function addListItem(pokemon);
 //Closing brackets of IIFE
 }
   ) ();
