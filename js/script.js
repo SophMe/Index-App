@@ -35,15 +35,12 @@ let pokemonRepository = (function () {
     return pokemonList;
   }
 
-  function add (pokemon) {
-    pokemonList.push(pokemon);
-  }
-
 //typeof object as condition to add
-//  function add(pokemon) {
-//    if (typeof pokemon === "object"){
-//      pokemonList.push(pokemon);
-//  } else (console.log("There is something wrong with this Pokémon."));  
+function add(pokemon) {
+    if (typeof pokemon === "object"){
+      pokemonList.push(pokemon);
+  } else (console.log("There is something wrong with this Pokémon."));
+}  
 
 //information that is returned is accessible from outside the IIFE
   return {
@@ -57,13 +54,9 @@ let pokemonRepository = (function () {
 
 //forEach
 //The function(pokemon) is passed as a parameter to the forEach() function:
-//my array.forEach(function(property){action(key.property)}); 
-//pokemonList.forEach(function(pokemon) {
-//  document.write(pokemon.name);
-//});
-
-//DOM manipulation
+//my array.forEach(function(property){action(key.property)});
 pokemonRepository.getAll().forEach(function(pokemon) {
+  //DOM manipulation
   let unorderedList = document.querySelector('ul');
   let listItem = document.createElement('li');
   let button = document.createElement('button');
