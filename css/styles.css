@@ -2,7 +2,8 @@
   --BGCOLOR: #f4f3ee;
   --ALTBGCOLOR: #dde5b6;
   --TEXT: #313638;
-  --ACCENT: #adc178;
+  --ACCENT: #a8b821;
+  --OLD: #adc178; ;
 }
 
 * {box-sizing: border-box;}
@@ -32,12 +33,13 @@ h1 {
 	padding: 15px;
 }
 
-/*
 h2 {
   font-size: 24px;
   font-weight: 700;
+  text-decoration: underline;
 }
 
+/*
 h3 {
   font-size: 18px;
   font-weight: 700;
@@ -45,6 +47,12 @@ h3 {
 */
 
 ul { list-style-type: none; }
+
+img {
+	border: 2px solid var(--ACCENT);
+	border-radius: 5px;
+	padding: 5px;
+}
 
 #modal-container {
 	display: none;
@@ -67,8 +75,23 @@ ul { list-style-type: none; }
   text-align: center;
 }
 
+.modal {
+	margin: auto;
+	display: inline-block;
+	width: 50%;
+	max-width: 400px;
+	border: 2px solid var(--ACCENT);
+	border-radius: 5px;
+}
+
 .main-div {
 	min-width: 400px;
+	border: 2px solid var(--ACCENT);
+	border-radius: 5px;
+}
+
+.height {
+	width: 40%;
 	border: 2px solid var(--ACCENT);
 }
 
