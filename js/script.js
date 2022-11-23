@@ -71,6 +71,22 @@ function showDetails(pokemon) {
   });
 }
 
+//Modal
+//get DOM element
+let modalContainer = document.querySelector('#modal-container');
+
+function showModal(pokemon) {
+  //clear existing modal content - do I always need this?
+  modalContainer.innerHTML = (' ');
+  let modal = document.createElement('div');
+  modal.classList.add('modal');
+  let indentifier = document.createElement('h2');
+  indentifier.innerText = 'pokemon.name';
+
+  modal.appendChild(indentifier);
+  modal.appendChild(modal);
+}
+
 //information that is returned is accessible from outside the IIFE
   return {
     add: add,
