@@ -65,27 +65,40 @@ function loadDetails(item) {
   });
 }
 
+// function showDetails(pokemon) {
+//   loadDetails(pokemon).then(function() {
+//   console.log(pokemon.name); 
+//   });
+// }
+
 function showDetails(pokemon) {
   loadDetails(pokemon).then(function() {
-  console.log(pokemon.name); 
+  showModal(pokemon.name); 
   });
 }
 
 //Modal
-//get DOM element
-let modalContainer = document.querySelector('#modal-container');
-
 function showModal(pokemon) {
-  //clear existing modal content - do I always need this?
-  modalContainer.innerHTML = (' ');
+//get DOM element
+  let modalContainer = document.querySelector('#modal-container');
+//clear existing modal content - do I need this?
+  modalContainer.innerHTML = ('');
+//create nodes
   let modal = document.createElement('div');
   modal.classList.add('modal');
-  let indentifier = document.createElement('h2');
-  indentifier.innerText = 'pokemon.name';
+  let indentifier = document.createElement('button');
+  indentifier.classList.add('show-modal')
+  indentifier.innerText = pokemon.name;
 
   modal.appendChild(indentifier);
-  modal.appendChild(modal);
+  modalContainer.appendChild(modal);
+
+  modalContainer.classList.add('is-visible');
 }
+
+document.querySelector('#modal-container').addEventListener('click', () => {
+  showModal(pokemon.name);
+});
 
 //information that is returned is accessible from outside the IIFE
   return {
