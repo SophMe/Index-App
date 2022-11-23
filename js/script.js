@@ -78,6 +78,7 @@ function showDetails(pokemon) {
 }
 
 //Modal
+//show
 function showModal(pokemon) {
 //get DOM element
   let modalContainer = document.querySelector('#modal-container');
@@ -86,9 +87,13 @@ function showModal(pokemon) {
 //create nodes
   let modal = document.createElement('div');
   modal.classList.add('modal');
-  let indentifier = document.createElement('button');
+
+  let indentifier = document.createElement('h2');
   indentifier.classList.add('show-modal')
-  indentifier.innerText = pokemon.name;
+  indentifier.innerText = pokemon;
+
+  let height = document.createElement('p');
+  height.classList.add('height');
 
   modal.appendChild(indentifier);
   modalContainer.appendChild(modal);
@@ -96,8 +101,31 @@ function showModal(pokemon) {
   modalContainer.classList.add('is-visible');
 }
 
+//hide
+function hideModal() {
+  let modalContainer = document.querySelector('#modal-container');
+  modalContainer.classList.remove('is-visible'); //also works with modal instead of modalContainer, which is correct?!
+}
+
+//close modal with esc
+window.addEventListener('keydown', (e) => {
+  let modalContainer =document.querySelector('#modal-container');
+  if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
+    hideModal();
+  }
+});
+
+// //close modal by clicking outside of it
+// modalContainer.addEventListener('click', (e) => {
+//   let target = e.target; //what exactly is this?
+//   if (target === modalContainer) {
+//     hideModal();
+//   }
+// });
+
+//open modal by clicking any button/pokemon.name
 document.querySelector('#modal-container').addEventListener('click', () => {
-  showModal(pokemon.name);
+  showModal(pokemon);
 });
 
 //information that is returned is accessible from outside the IIFE
