@@ -41,6 +41,7 @@ function loadList() {
       json.results.forEach(function (item) {
         let pokemon = {
           name: item.name,
+          height: item.height,
           detailsUrl: item.url
         };
         add(pokemon);
@@ -65,12 +66,6 @@ function loadDetails(item) {
   });
 }
 
-// function showDetails(pokemon) {
-//   loadDetails(pokemon).then(function() {
-//   console.log(pokemon.name); 
-//   });
-// }
-
 function showDetails(pokemon) {
   loadDetails(pokemon).then(function() {
   showModal(pokemon.name); 
@@ -89,13 +84,18 @@ function showModal(pokemon) {
   modal.classList.add('modal');
 
   let indentifier = document.createElement('h2');
-  indentifier.classList.add('show-modal')
+  //indentifier.classList.add('show-modal')
   indentifier.innerText = pokemon;
 
   let height = document.createElement('p');
-  height.classList.add('height');
+  height.innerText = "height: " + pokemon.height;
+
+  let image = document.createElement('img');
+  image.src = pokemon.imageUrl;
 
   modal.appendChild(indentifier);
+  modal.appendChild(height);
+  modal.appendChild(image);
   modalContainer.appendChild(modal);
 
   modalContainer.classList.add('is-visible');
@@ -115,7 +115,7 @@ window.addEventListener('keydown', (e) => {
   }
 });
 
-// //close modal by clicking outside of it
+//close modal by clicking outside of it NOT WORKING
 // modalContainer.addEventListener('click', (e) => {
 //   let target = e.target; //what exactly is this?
 //   if (target === modalContainer) {
@@ -123,10 +123,10 @@ window.addEventListener('keydown', (e) => {
 //   }
 // });
 
-//open modal by clicking any button/pokemon.name
-document.querySelector('#modal-container').addEventListener('click', () => {
-  showModal(pokemon);
-});
+//What is this for?!
+// document.querySelector('#modal-container').addEventListener('click', () => {
+//   showModal(pokemon);
+// });
 
 //information that is returned is accessible from outside the IIFE
   return {
