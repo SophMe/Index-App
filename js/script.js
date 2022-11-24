@@ -68,7 +68,7 @@ function loadDetails(item) {
 
 function showDetails(pokemon) {
   loadDetails(pokemon).then(function() {
-  showModal(pokemon.name); 
+  showModal(pokemon); //pass the entire object
   });
 }
 
@@ -85,10 +85,10 @@ function showModal(pokemon) {
 
   let indentifier = document.createElement('h2');
   //indentifier.classList.add('show-modal')
-  indentifier.innerText = pokemon;
+  indentifier.innerText = pokemon.name;
 
   let height = document.createElement('p');
-  height.innerText = "height: " + pokemon.height;
+  height.innerText = "height: " + pokemon.height + " m";
 
   let image = document.createElement('img');
   image.src = pokemon.imageUrl;
@@ -99,6 +99,16 @@ function showModal(pokemon) {
   modalContainer.appendChild(modal);
 
   modalContainer.classList.add('is-visible');
+
+
+//close modal by clicking outside of it
+  modalContainer.addEventListener('click', (e) => {
+  let target = e.target; //what exactly is this?
+  if (target === modalContainer) {
+    hideModal();
+  }
+});
+  console.log(target);
 }
 
 //hide
@@ -114,14 +124,6 @@ window.addEventListener('keydown', (e) => {
     hideModal();
   }
 });
-
-//close modal by clicking outside of it NOT WORKING
-// modalContainer.addEventListener('click', (e) => {
-//   let target = e.target; //what exactly is this?
-//   if (target === modalContainer) {
-//     hideModal();
-//   }
-// });
 
 //What is this for?!
 // document.querySelector('#modal-container').addEventListener('click', () => {
