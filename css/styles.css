@@ -109,9 +109,14 @@ ul { list-style-type: none; }
   border-radius: 4px;
 }
 
-.listButton:hover, .listButton:focus {
+.listButton:hover {
   cursor: pointer;
   opacity: 0.8;
+}
+
+:focus {
+	background-color: #c3b3f6;
+  border: 2px solid #A890F0;
 }
 
 .logo {
