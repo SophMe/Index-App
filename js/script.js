@@ -2,7 +2,7 @@
 //IIFE starts with the first function()
 let pokemonRepository = (function () {
   let pokemonList = [];
-  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=40&offset=40';
 
 //"The IIFE returns an object with two keys: add and getAll. 
 //This means that, whenever you access pokemonRepository somewhere in your app, it will represent an object with these two keys."
@@ -60,7 +60,10 @@ function loadDetails(item) {
 // Now we add the details to the item
     item.imageUrl = details.sprites.front_default;
     item.height = details.height;
-    item.types = details.types;
+    item.types = [];
+    for (var i = 0; i < details.types.length; i++) {
+      item.types.push(details.types[i].type.name);
+    }
   }).catch(function (e) {
     console.error(e);
   });
@@ -87,15 +90,20 @@ function showModal(pokemon) {
   //indentifier.classList.add('show-modal')
   indentifier.innerText = pokemon.name;
 
+  let image = document.createElement('img');
+  image.classList.add('poke-img');
+  image.src = pokemon.imageUrl;
+
   let height = document.createElement('p');
   height.innerText = "height: " + pokemon.height + " m";
 
-  let image = document.createElement('img');
-  image.src = pokemon.imageUrl;
+  let type = document.createElement('p');
+  type.innerText = "type: " + pokemon.types;
 
   modal.appendChild(indentifier);
-  modal.appendChild(height);
   modal.appendChild(image);
+  modal.appendChild(height);
+  modal.appendChild(type);
   modalContainer.appendChild(modal);
 
   modalContainer.classList.add('is-visible');
@@ -103,18 +111,18 @@ function showModal(pokemon) {
 
 //close modal by clicking outside of it
   modalContainer.addEventListener('click', (e) => {
-  let target = e.target; //what exactly is this?
+  let target = e.target;
   if (target === modalContainer) {
     hideModal();
   }
+   console.log(target);
 });
-  console.log(target);
 }
 
 //hide
 function hideModal() {
   let modalContainer = document.querySelector('#modal-container');
-  modalContainer.classList.remove('is-visible'); //also works with modal instead of modalContainer, which is correct?!
+  modalContainer.classList.remove('is-visible');
 }
 
 //close modal with esc
@@ -124,11 +132,6 @@ window.addEventListener('keydown', (e) => {
     hideModal();
   }
 });
-
-//What is this for?!
-// document.querySelector('#modal-container').addEventListener('click', () => {
-//   showModal(pokemon);
-// });
 
 //information that is returned is accessible from outside the IIFE
   return {
