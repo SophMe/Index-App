@@ -1,8 +1,8 @@
 :root {
-  --BGCOLOR: #f4f3ee;
+  --BGCOLOR: whitesmoke;
   --ALTBGCOLOR: #dde5b6;
   --TEXT: #313638;
-  --ACCENT: #a8b821;
+  --ACCENT: #a7bd12;
   --OLD: #adc178; ;
 }
 
@@ -48,10 +48,11 @@ h3 {
 
 ul { list-style-type: none; }
 
-img {
-	border: 2px solid var(--ACCENT);
+.poke-img {
+	border: 2px solid #a8a878;
 	border-radius: 5px;
 	padding: 5px;
+	height: 150px;
 }
 
 #modal-container {
@@ -76,6 +77,7 @@ img {
 }
 
 .modal {
+	background-color: var(--BGCOLOR);
 	margin: auto;
 	display: inline-block;
 	width: 50%;
@@ -112,3 +114,6 @@ img {
   opacity: 0.8;
 }
 
+.logo {
+	background-color: var(--BGCOLOR);
+}
