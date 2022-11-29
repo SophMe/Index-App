@@ -12,21 +12,36 @@
 	<title>Pokémon Index App</title>
 </head>
 <body>
-	<header>
-		<img class="logo" src="img/logo.png" height="70px" alt="logo Pokémon Index">
-	</header>
+	<nav class="navbar fixed-top bg-dark">
+    	<h1>Pokémon Index</h1>
+	</nav>
 	
 	<main>
-		<div class="main-div">
-			<div class="row">
-				<p class="col-lg-7">
-					Click on any Pokémon's name to see its picture and other information like height and type.
-				</p>
-			</div>	
+		<div class="main-div col-12">
 			<ul class="list-group">
 			</ul>
-			<div id="modal-container">
-			</div>	
+			<div class="modal-fade" id="modal-container" tabindex="-1" role="dialog" aria-labelledby="mainModalLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+
+						<div class="modal-header">
+							<h5 class="modal-title" id="pokemonName">pokemonName</h5>
+							<button type="button" class="close" date-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+
+						<div class="modal-body">
+							...
+						</div>
+
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						</div>
+
+					</div>
+				</div>
+			</div>
 		</div>
 	</main>
 
