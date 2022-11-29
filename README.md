@@ -1,5 +1,5 @@
 # Index App
-- See app at https://sophme.github.io/Index-App/
+- See app at https://clever-fox-ab3f44.netlify.app/
 
 ## Project description
 This is a web application build with HTML, CSS and Javascript loading a list of Pokémon from an external API and enabling the user to view data points in detail.
