@@ -19,17 +19,18 @@ function add(pokemon) {
 }  
 
 function addListItem(pokemon) {
-  //DOM manipulation
-  let unorderedList = document.querySelector('ul');
-  let listItem = document.createElement('li');
-  let button = document.createElement('button');
-  button.innerText = pokemon.name;
-  button.classList.add('listButton');
-  listItem.appendChild(button);
-  unorderedList.appendChild(listItem);
+//create list of Pokémons as button within div .list-group
+  let list = $('.list-group');
+  let listItem = $('<li></li>');
+  let listButton = $('<button type="button" data-target="modal-container" data-toggle="modal" class="btn btn-primary">' + pokemon.name + '</button>');
+
+  list.append(listItem);
+  listItem.append(listButton);
+  listItem.addClass('group-list-item');
+
 //event listener  
-  button.addEventListener('click', function(event){
-    showDetails(pokemon)
+  listButton.on('click', function(event){
+    showDetails(pokemon);
   });
 }
 
@@ -71,67 +72,30 @@ function loadDetails(item) {
 
 function showDetails(pokemon) {
   loadDetails(pokemon).then(function() {
-  showModal(pokemon); //pass the entire object
+  showModal(pokemon); //passes the entire object
   });
 }
 
 //Modal
 //show
 function showModal(pokemon) {
-//get DOM element
-  let modalContainer = document.querySelector('#modal-container');
-//clear existing modal content - do I need this?
-  modalContainer.innerHTML = ('');
-//create nodes
-  let modal = document.createElement('div');
-  modal.classList.add('modal');
 
-  let indentifier = document.createElement('h2');
-  //indentifier.classList.add('show-modal')
-  indentifier.innerText = pokemon.name;
+//assign info to modal elements
+  let modalTitle = $('.modal-title');
+  let modalBody = $('.modal-body');
+  modalTitle.empty();
+  modalBody.empty();
 
-  let image = document.createElement('img');
-  image.classList.add('poke-img');
-  image.src = pokemon.imageUrl;
+  let identifier = $('<p>' + pokemon.name + '</p>');
+  let image = $('<img class="poke-img" scr="pokemon.imageUrl" />');
+  let type = $('<p>' + 'type: ' + pokemon.types + '</p>');
+  let height = $('<p>' + 'height: ' + pokemon.height + ' m' + '</p>');
 
-  let height = document.createElement('p');
-  height.innerText = "height: " + pokemon.height + " m";
-
-  let type = document.createElement('p');
-  type.innerText = "type: " + pokemon.types;
-
-  modal.appendChild(indentifier);
-  modal.appendChild(image);
-  modal.appendChild(height);
-  modal.appendChild(type);
-  modalContainer.appendChild(modal);
-
-  modalContainer.classList.add('is-visible');
-
-
-//close modal by clicking outside of it
-  modalContainer.addEventListener('click', (e) => {
-  let target = e.target;
-  if (target === modalContainer) {
-    hideModal();
-  }
-   console.log(target);
-});
+  modalTitle.append(identifier);
+  modalBody.append(image);
+  modalBody.append(type);
+  modalBody.append(height); 
 }
-
-//hide
-function hideModal() {
-  let modalContainer = document.querySelector('#modal-container');
-  modalContainer.classList.remove('is-visible');
-}
-
-//close modal with esc
-window.addEventListener('keydown', (e) => {
-  let modalContainer =document.querySelector('#modal-container');
-  if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
-    hideModal();
-  }
-});
 
 //information that is returned is accessible from outside the IIFE
   return {
@@ -140,7 +104,7 @@ window.addEventListener('keydown', (e) => {
     addListItem: addListItem,
     loadList: loadList,
     loadDetails: loadDetails,
-    showDetails: showDetails
+    showDetails: showDetails,
   };
 
 //Closing brackets of IIFE
@@ -156,5 +120,4 @@ pokemonRepository.loadList().then(function() {
     pokemonRepository.addListItem(pokemon);
   });
 });
-
 
