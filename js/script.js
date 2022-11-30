@@ -22,7 +22,7 @@ function addListItem(pokemon) {
 //create list of Pokémons as button within div .list-group
   let list = $('.list-group');
   let listItem = $('<li></li>');
-  let listButton = $('<button type="button" data-target="modal-container" data-toggle="modal" class="btn btn-primary">' + pokemon.name + '</button>');
+  let listButton = $('<button type="button" data-target="#modal-container" data-toggle="modal" class="btn btn-primary">' + pokemon.name + '</button>');
 
   list.append(listItem);
   listItem.append(listButton);
@@ -87,7 +87,7 @@ function showModal(pokemon) {
   modalBody.empty();
 
   let identifier = $('<p>' + pokemon.name + '</p>');
-  let image = $('<img class="poke-img" scr="pokemon.imageUrl" />');
+  let image = $('<img class="poke-img" src="'+ pokemon.imageUrl +'" />');
   let type = $('<p>' + 'type: ' + pokemon.types + '</p>');
   let height = $('<p>' + 'height: ' + pokemon.height + ' m' + '</p>');
 
