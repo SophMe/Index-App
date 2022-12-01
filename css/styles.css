@@ -3,7 +3,6 @@
   --ALTBGCOLOR: #dde5b6;
   --TEXT: #313638;
   --ACCENT: #a7bd12;
-  --OLD: #adc178; ;
 }
 
 body {
@@ -12,7 +11,7 @@ body {
 	font-size: 16px;
 	line-height: 1.6;
 	background-color: var(--BGCOLOR);
-  color: var(--TEXT);
+	color: var(--TEXT);
 	margin: 15px;
 }
 
@@ -24,8 +23,10 @@ h1 {
 
 ul { list-style-type: none; }
 
-button {
-	overflow: none;
+.list-group {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
 }
 
 .bg-dark {
@@ -33,21 +34,38 @@ button {
 	box-shadow: 5px 10px 18px #888888;
 }
 
+.close {
+	color: var(--TEXT);
+}
+
+#close {
+    color: var(--TEXT);
+    border-color: var(--ACCENT);
+}
+
+#close:hover {
+    background-color: var(--ALTBGCOLOR);
+}
+
 .btn-primary {
 	background-color: var(--ALTBGCOLOR);
-  border: 2px solid var(--ACCENT);
-  color: var(--TEXT);
-  font-size: 18px;
-  text-align: center;
-  text-decoration: none;
-  margin: 5px;
-  padding: 5px;
-  border-radius: 4px;
+	border: 2px solid var(--ACCENT);
+	color: var(--TEXT);
+	height: 200px;
+	width: 200px;
+	font-size: 18px;
+	text-align: center;
+	margin: 15px;
+	border-radius: 4px;
 }
 
 .btn-primary:hover {
-  cursor: pointer;
-  opacity: 0.8;
+	background-color: whitesmoke;
+	border: 2px solid var(--ACCENT);
+	color: var(--TEXT);
+	border-radius: 4px;
+    cursor: pointer;
+    opacity: 0.8;
 }
 
 .poke-img {
@@ -55,20 +73,18 @@ button {
 	border-radius: 5px;
 	padding: 5px;
 	height: 150px;
+	width: 150px;
 }
 
 .main-div {
 	margin-top: 100px;
 	min-width: 400px;
-	border: 2px solid var(--ACCENT);
-	border-radius: 5px;
 }
 
-.modal-dialog {
+#modal-dialog {
 	background-color: var(--BGCOLOR);
 	margin: auto;
 	display: inline-block;
-	width: 50%;
 	max-width: 400px;
 	border: 2px solid var(--ACCENT);
 	border-radius: 5px;
