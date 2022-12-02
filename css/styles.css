@@ -68,6 +68,15 @@ ul { list-style-type: none; }
     opacity: 0.8;
 }
 
+.btn-primary:focus, .btn:focus {
+	box-shadow: none;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active {
+	background-color: whitesmoke;
+	border-color: var(--ACCENT);
+}
+
 .poke-img {
 	border: 2px solid #a8a878;
 	border-radius: 5px;
