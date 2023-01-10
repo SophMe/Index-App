@@ -97,6 +97,24 @@ function showModal(pokemon) {
   modalBody.append(height); 
 }
 
+//SEARCH
+document.getElementById('search-button').addEventListener('click', search);
+
+function search() {
+  let input = document.getElementById('search-input').value;
+  let newList = document.getElementById('pokemon-list');
+  let listItems = newList.getElementsByTagName('li');
+  for (let i = 0; i < listItems.length; i++) {
+    const item = listItems[i];
+    const itemText = item.textContent;
+    if (itemText.toLowerCase().indexOf(input.toLowerCase()) > -1) {
+      item.style.display = '';
+    } else {
+      item.style.display = 'none';
+    }
+  }
+}
+
 //information that is returned is accessible from outside the IIFE
   return {
     add: add,
@@ -120,4 +138,3 @@ pokemonRepository.loadList().then(function() {
     pokemonRepository.addListItem(pokemon);
   });
 });
-
