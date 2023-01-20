@@ -99,15 +99,18 @@ function showModal(pokemon) {
 
 //SEARCH
 document.getElementById('search-button').addEventListener('click', search);
+document.getElementById('search-input').addEventListener('keydown', search);
 
 function search() {
   let input = document.getElementById('search-input').value;
+  //console.log({input});
   let newList = document.getElementById('pokemon-list');
   let listItems = newList.getElementsByTagName('li');
   for (let i = 0; i < listItems.length; i++) {
     const item = listItems[i];
     const itemText = item.textContent;
     if (itemText.toLowerCase().indexOf(input.toLowerCase()) > -1) {
+      console.log('Found', itemText);
       item.style.display = '';
     } else {
       item.style.display = 'none';
